@@ -1,13 +1,19 @@
 import React from "react";
 
-const TodoList = ({ data , handleFavourite, deleteItem , loading}) => {
+const TodoList = ({data,handleFavourite, deleteItem,postPerPage,currentPage,loading}) => {
 
   if(loading){
     return <h2> Data is loading..</h2>;
   }
+  
+  const indexOfLastData = currentPage * postPerPage;
+  const indexOfFirstData = indexOfLastData - postPerPage;
+  const currentTask = data.slice(indexOfFirstData , indexOfLastData);
+
+
   return (
     <div>
-      {data.map((ele, ind) => {
+      {currentTask.map((ele, ind) => {
         return (
           <div key={ind}>
             <div className="content">
@@ -28,7 +34,7 @@ const TodoList = ({ data , handleFavourite, deleteItem , loading}) => {
                   <i
                     className=" fa fa-trash add-btn"
                     title="Delete"
-                    onClick={() => deleteItem(ind)}
+                    onClick={() => deleteItem(ele)}
                   ></i>
                 </div>
               </div>

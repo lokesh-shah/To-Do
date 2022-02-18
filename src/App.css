@@ -51,8 +51,8 @@ input {
 }
 .body{
     background-color:#142130;
-    border-bottom-left-radius: 13px;
-    border-bottom-right-radius: 13px;
+    /* border-bottom-left-radius: 13px;
+    border-bottom-right-radius: 13px; */
 }
 
 .body :hover {
@@ -86,6 +86,10 @@ input {
 }
 .fa-trash{
     margin-left: 2px;  
+}
+
+.pagination{
+    margin-top: 10px;
 }
 
 
